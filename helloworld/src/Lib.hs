@@ -1,6 +1,10 @@
-module Lib
-    ( someFunc
-    ) where
+module Lib (
+    hello,
+    sayHello
+) where
 
-someFunc :: IO ()
-someFunc = putStrLn "someFunc"
+hello :: String -> String
+hello name = "Hello, " ++ name ++ "!"
+
+sayHello :: String -> IO ()
+sayHello = putStrLn . hello
